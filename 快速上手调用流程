@@ -1,0 +1,10 @@
+快速上手调用流程：
+Easy.Rpc.Test.Protocol. WebApiTest/ PostWithoutDataTest()-->
+Easy.Rpc.RPCServiceInterceptor/ Intercept(IInvocation invocation)-->
+Easy.Rpc.Test.Protocol.TestService/ GetStringResult(InvokerContext context = null)-->
+Easy.Rpc.Protocol.WebApiProtocol/ Invoke<T>(InvokerContext context = null)-->
+Easy.Rpc.ClientInvoker/ Invoke<T>(IInvoker< T> invoker, InvokerContext invokerContext)-->
+Easy.Rpc.Cluster.FailoverCluster/ Invoke<T>(IList< Node> nodes, string path, ILoadBalance loadbanlance, IInvoker<T > invoker)-->
+Easy.Rpc.Protocol.WebApiInvoker/ DoInvoke(Node node, string path)-->
+Easy.Rpc.Test.Protocol.TestController/ GetString()-->
+return 'ok'
